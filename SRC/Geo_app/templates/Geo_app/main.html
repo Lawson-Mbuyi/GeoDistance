@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+    {% block titre %}
+    Distance computing
+    {% endblock titre %}
+
+    {% block content %}
+        {{map|safe}}
+        <hr>
+        <form action="" method="POST" autocapitalize="off">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit" class="btn btn-primary">Valider</button>
+
+        </form>
+    {% endblock content %}
